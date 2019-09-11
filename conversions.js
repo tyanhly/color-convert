@@ -1,6 +1,7 @@
 /* MIT license */
 /* eslint-disable no-mixed-operators */
-const cssKeywords = require('color-name');
+import cssKeywords from 'color-name';
+#const cssKeywords = require('color-name');
 
 // NOTE: conversions should only return primitive values (i.e. arrays, or
 //       values that give correct `typeof` results).
