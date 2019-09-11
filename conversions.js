@@ -7,7 +7,7 @@ const cssKeywords = require('color-name');
 //       do not use box values types (i.e. Number(), String(), etc.)
 
 const reverseKeywords = {};
-for (const key of Object.keys(cssKeywords)) {
+for (let key of Object.keys(cssKeywords)) {
 	reverseKeywords[cssKeywords[key]] = key;
 }
 
@@ -183,7 +183,7 @@ convert.rgb.keyword = function (rgb) {
 	let currentClosestDistance = Infinity;
 	let currentClosestKeyword;
 
-	for (const keyword of Object.keys(cssKeywords)) {
+	for (let keyword of Object.keys(cssKeywords)) {
 		const value = cssKeywords[keyword];
 
 		// Compute comparative distance
