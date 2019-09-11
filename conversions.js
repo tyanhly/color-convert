@@ -7,7 +7,8 @@ const cssKeywords = require('color-name');
 //       do not use box values types (i.e. Number(), String(), etc.)
 
 const reverseKeywords = {};
-for (let key of Object.keys(cssKeywords)) {
+let key;
+for (key of Object.keys(cssKeywords)) {
 	reverseKeywords[cssKeywords[key]] = key;
 }
 
@@ -30,9 +31,9 @@ const convert = {
 };
 
 module.exports = convert;
-
+let model;
 // Hide .channels and .labels properties
-for (const model of Object.keys(convert)) {
+for ( model of Object.keys(convert)) {
 	if (!('channels' in convert[model])) {
 		throw new Error('missing channels property: ' + model);
 	}
@@ -182,8 +183,8 @@ convert.rgb.keyword = function (rgb) {
 
 	let currentClosestDistance = Infinity;
 	let currentClosestKeyword;
-
-	for (let keyword of Object.keys(cssKeywords)) {
+	let keyword;
+	for (keyword of Object.keys(cssKeywords)) {
 		const value = cssKeywords[keyword];
 
 		// Compute comparative distance
